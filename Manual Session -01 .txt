@@ -1,0 +1,55 @@
+https://github.com/vimleshtech/testing_dec1
+=============================================
+
+SDLC: software development life cycle
+==============================================
+-Inception 
+	1. Requirement Gathering and Analysis 	: by BA 
+		-Understading of current system 
+		-Objective of proposed system 
+		-Feasibility study 
+		-Resource Plan 
+			-Hardware/Software
+			-Human 
+		-Timeline 
+		-Cost 
+		etc.		
+	
+		Output:
+			-SRS	: software requirement specification 
+			-FR (FRS/FRD): functional requirement 
+			-BR (BRS/BRD): business requirement 
+		
+	2. Design 		: by Software/Solution Architech
+		-HLD
+		-LLD
+
+	3. Development  /Implementation 		: by Developer 
+
+	
+	4. Testing / SQT 				: by Tester
+
+		Level of Testing:
+			-Unit Testing			: by developer
+			-Integration Testing		: by tester	
+			-System Testing			: by tester
+			-UAT 				: by user/client			
+
+	5. Release 
+
+		
+			
+SDLC Models
+==================
+-Waterfall Model 
+-Prototype 
+-Iterrative/Incremental 
+-RAD : rapid development 
+-Spiral Model
+-VModel
+
+-Agile	: is methodlogoy 
+
+
+
+				
