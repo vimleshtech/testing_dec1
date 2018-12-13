@@ -1,0 +1,256 @@
+========================================== 
+==========================================
+Selenium: is API  (application programing interface) 
+          or library 
+	selenium version:
+		3.141.59
+	
+selenium :
+---------------
+https://www.seleniumhq.org/download/
+
+jdk: 
+---------------
+https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+
+Eclipse:
+---------------
+https://www.eclipse.org/downloads/
+
+mysql 
+---------------
+https://dev.mysql.com/downloads/windows/installer/5.7.html
+
+
+Not required for all
+-------------------------
+https://www.python.org/downloads/
+
+Selenium Components
+=========================
+-Selenium WebDriver 	: Scripting 
+-Selenium RC/Grid	: Multiple browser testing 
+-Selnium IDE 		: is plugin for record and play 
+
+
+Summary:
+============
+-jdk		: 1.8 + 
+-eclipse 	: oxygen 
+-selenium 	: 3.14
+-driver /connector : 
+		-chrome driver 
+		-firefox driver 
+		
+
+
+
+
+
+Decision Table Testing
+=============================
+a 	=2
+b 	=44
+c 	=100
+
+AND - && (If both are true then true otherwise fasle)
+------------------------------------
+T T = T
+T F = F
+F T = F
+F F = F
+ 
+Decision Table:
+--------------------
+a>b  && a>c
+F	F		= F
+
+
+a 	=200
+b 	=44
+c 	=100
+
+a>b  && a>c
+T	T		= T
+
+
+a 	=200
+b 	=440
+c 	=100
+
+a>b  && a>c
+F	T		= F
+
+
+OR - || (If both are false then false otherwise true)
+------------------------------------
+T T = T
+T F = T
+F T = T
+F F = F
+
+
+ADH = YES 	PASS = NO 
+
+T		F   = T 
+
+ADH = NO 	PASS = YES
+F		T 	= T
+
+
+
+
+ADH = YES 	PASS = YES
+T		T 	= T
+
+
+ADH = NO 	PASS = NO 
+F		F 	= F
+
+
+
+====
+
+T  &&  T  ||  F 	=  T
+
+F  &&  F  ||  T		=  T
+
+(F && T) ||   F 	=  F
+   F     ||   F  
+
+Equivalence Partitioning & Boundary Value Analysis
+=================================================
+Boundary Value Analysis
+--------------------------
+FR: password lenght shoule be between 8 and 12
+
+
+	
+pass ="abcdxyz1"
+
+if(pass.length>=8  && pass.length<=12)
+{
+		match	
+}
+else
+{
+		not match 
+}
+
+  
+FR : age shoule be between 1 to 18 
+
+if(pass.length>=1  && pass.length<=18)
+{
+	not match
+
+}
+else
+{
+	match
+
+}
+
+Equivalence Partitioning 
+================================
+
+day  =1
+
+switch(day)
+{
+
+case 1:
+	
+
+case 2:
+
+
+case 3:
+
+
+
+}
+
+
+
+=====
+a =11
+b =11
+c =1
+
+if(a>b && a>c)
+{
+	a is gt
+}
+else if(b>a && b>c)
+{
+	b is gt
+
+}
+else if(c>a & c>b)
+{
+
+	c is gt 
+}
+else(a == b && a!= c)
+{
+
+	a,b,c are equal 
+}
+
+
+Principals :
+===================
+1. Context based testing 
+2. Testing should be performed with good volume of data 
+	uid :1111
+	pwd : xyz 
+			min 8 max 12
+				
+3. 80% bug will be indenfied in 20% module 
+	# of modules : 10		2
+	# testcase   : 100
+	fail	     : 70 
+			56		
+			
+4.  Security 
+	
+		
+5. Compatibility 
+
+
+6. Methodlogy 
+
+
+
+
+		
+	
+ 	 
+	
+			
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
