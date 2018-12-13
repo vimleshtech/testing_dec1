@@ -1,0 +1,48 @@
+========================================== 
+==========================================
+Selenium: is API  (application programing interface) 
+          or library 
+	selenium version:
+		3.141.59
+	
+selenium :
+---------------
+https://www.seleniumhq.org/download/
+
+jdk: 
+---------------
+https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+
+Eclipse:
+---------------
+https://www.eclipse.org/downloads/
+
+mysql 
+---------------
+https://dev.mysql.com/downloads/windows/installer/5.7.html
+
+
+Not required for all
+-------------------------
+https://www.python.org/downloads/
+
+Selenium Components
+=========================
+-Selenium WebDriver 	: Scripting 
+-Selenium RC/Grid	: Multiple browser testing 
+-Selnium IDE 		: is plugin for record and play 
+
+
+Summary:
+============
+-jdk		: 1.8 + 
+-eclipse 	: oxygen 
+-selenium 	: 3.14
+-driver /connector : 
+		-chrome driver 
+		-firefox driver 
+		
+
+
+
+
