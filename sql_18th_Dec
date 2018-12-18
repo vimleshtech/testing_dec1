@@ -1,0 +1,226 @@
+/*
+-Subquery : is also known as nested/inner query
+
+-Auto increment columns if table is already exist
+		-identity(1,1)   : ms sql server
+		-auto_increment	 : my sql server 
+-Column sequence 
+
+-Constraints 
+
+-Join: to merge two or more than two tables horizentally based on common column
+	-at least one column must be same(logically) in both the tables
+There are following types of join:
+-inner join  / default join / equi join 
+		-return common or matching rows 
+-outer join / full outer join	: return all rows from both tables
+	-left join  / left outer  join		
+					: return all rows from left table and matching from right table
+					or output of inner join + rest record from left table 
+	-right join  / right outer join 
+				: return all rows from right table and matching from left table
+				or output of inner join + rest records from right table
+				
+ other types of join
+ -self join 
+ -cross join 
+
+*/
+use hrms 
+--select * from sys.objects
+select * from employee
+use test 
+select * from emp
+
+select * from hrms..employee
+
+
+--Subquery : is also known as nested/inner query
+--return 3rd highest id 
+
+select top 1 * from 	
+	(select top 3 * from employee order by eid desc) a
+order by eid asc 
+
+--return 2nd lowest
+select top 1 * from 	
+	(select top 2 * from employee order by eid asc) a
+order by eid desc 
+
+
+2*3+(3*4)
+  2*3  +12
+  6+12 = 18
+
+
+--auto increment / identity 
+select * from employee
+
+
+alter table employee
+add sno int identity(1,1)
+
+
+--
+select * from employee
+
+select eid,ename from employee
+
+
+select * from employee
+
+insert into employee(eid,ename,gender)
+values(100,'kshitiz','male')
+
+
+select ename,eid from employee
+
+/*
+--Constraints: is properties of column 
+----------------------------
+There are following types of constraints:
+-primary key	
+		-not null
+		-no duplicate
+		-will be one on a table 
+		-primary key is also known as cluster index(physically sorted)
+			
+-foreign key
+		-will allow reference value only
+		-null value can be also stored
+		-duplicte value can be also stored
+		
+		emp:
+			eid 
+			1
+			2
+			
+		sal:
+			eid 
+			1
+			10****
+			null 
+			1	
+				
+						
+-unique
+		-no duplicate
+		-single null 
+
+-not null
+		
+-null
+	
+-default
+			-system will set given value automatically if user will not store data
+-check 
+			-allow from given list 
+				
+
+*/
+
+create table con_employee
+(
+eid int  primary key, --identity(1,1)
+fname  varchar(100) not null,
+lname varchar(100) null, 
+emailid   varchar(50) unique ,
+gender    char(1)      check  (gender in ('m','f')),
+is_active varchar(10) default 'Active' 
+)
+
+
+
+
+insert into con_employee(eid,fname)
+values(1,'ramna');
+
+
+insert into con_employee(eid,fname,emailid)
+values(3,'ramna','abc1@gmail.com');
+
+
+insert into con_employee(eid,fname,emailid,gender)
+values(10,'sbsjgshgs','abc5@gmail.com','m');
+
+select * from con_employee;
+
+
+----
+alter table con_employee
+add constraint abcd primary key(eid) 
+
+sp_help con_employee
+
+--
+create table con_salary 
+(
+s_id int identity(1,1),
+id   int  foreign key references con_employee(eid),
+basic int,
+hra int
+)
+
+
+insert into con_salary(id,basic,hra)
+values(1,6000,3000)
+
+
+insert into con_salary(basic,hra)
+values(8000,4000)
+
+select * from con_salary
+
+
+--inner join 
+
+select e.eid,e.fname,s.basic,s.hra
+from con_employee e inner join con_salary s
+	on e.eid = s.id 
+
+
+select e.eid,e.fname,s.basic,s.hra
+from con_employee e  join con_salary s
+	on e.eid = s.id 
+
+--
+select e.eid,e.fname,s.basic,s.hra
+from con_employee e inner join con_salary s
+	on e.eid = s.id 
+	   and s.hra > 4000
+
+
+
+select e.eid,e.fname,s.basic,s.hra
+from con_employee e inner join con_salary s
+	on e.eid = s.id 
+	   and s.hra > 4000
+WHERE S.id =1
+
+--outer join 
+select e.eid,e.fname,s.basic,s.hra
+from con_employee e full outer join con_salary s
+	on e.eid = s.id 
+
+--left join 
+select e.eid,e.fname,s.basic,s.hra
+from con_employee e left join con_salary s
+	on e.eid = s.id 
+
+--right 
+select e.eid,e.fname,s.basic,s.hra
+from con_employee e right  join con_salary s
+	on e.eid = s.id 
+
+
+
+--
+select e.eid,e.fname,SUM(s.basic),SUM(s.hra)
+from con_employee e right  join con_salary s
+	on e.eid = s.id 
+GROUP BY E.EID, E.FNAME
+
+
+
+
+
