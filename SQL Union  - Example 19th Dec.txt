@@ -1,0 +1,44 @@
+="union select '"&A2&"','"&B2&"'"
+
+
+select 1,'a' 
+union select 2,'b'
+
+union		: return distinct rows
+union all  : return all rows 
+
+---
+use test 
+
+insert into emp (name,email)
+values('aaa','fff@gmail.com')
+
+--
+insert into emp (name,email)
+values('aaa','fff@gmail.com'),('aaa','fff@gmail.com'),('aaa','fff@gmail.com')
+
+select * from emp 
+--
+insert into emp 
+values(1,'aaa',22,4444,'hr','fff@gmail.com')
+
+insert into emp 
+values(1,'aaa',22,4444,'','fff@gmail.com')
+
+
+--
+insert into emp 
+select 1,'aaa',22,4444,'','fff@gmail.com'
+union 
+select 2,'aaa',22,4444,'','fff@gmail.com'
+union 
+select 3,'aaa',22,4444,'','fff@gmail.com'
+
+
+select * from emp where dept =''
+
+select * from emp where dept is null
+
+
+
+
