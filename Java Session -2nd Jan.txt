@@ -1,0 +1,116 @@
+Install/Setup the Database Server
+====================================
+	-My SQL Server
+
+user id: root
+password: root
+
+SQL Commands:
+===================
+	show database;
+	create database <dbname>; : create new db
+	use testdb;		: switch db
+	show tables;		: show list of tables
+	create table emp(id int, name varchar(100));
+	desc emp;
+
+	insert into emp(id,name) vlaues(1,'raman');
+	
+
+	select * from emp;
+	select name from emp;
+	select * from emp where id=1;
+
+	delete from emp where id=1;
+
+
+	update emp set name='newname' where id =2;
+	
+
+JDBC-Connetor
+
+	.jar : java libray 
+	
+
+
+
+OOPS: object oriented programing structure/system
+======================
+Advantage:
+1. Reusability of source code
+2. Support to  modular progrmaing 
+3. Easy to manage the source code 
+
+
+
+Fundamental of oops:
+-class		: is wrapper data member and function/method
+		: data member and function can be written together 
+		syntax:
+		class  Calc
+		{
+			//data member 
+			int a;
+			int b;
+			String ss;
+			//method
+			void add()
+			{
+
+			}
+				
+		}
+-object			: is an instance for class
+			syntax:
+				clac c = new calc()
+-encapsulation		: is wrapping of data member and funtion in a 				single unit
+			: every class is by default encapsulated 
+			
+-asbtraction/data hiding	
+			asbtraction: expose the essential features of 	class/method and hide the defintion/logic i.e. abstraction
+			data hiding: access specifier
+		
+
+keyword		in_class	in_child_class	in_package anywhere
+-------		--------	-------------	---------- --------
+private		yes		no		no		no
+protected	yes		yes		yes		no
+
+default(no keyword) yes		yes		yes		no
+public		yes		yes		yes		yes
+		
+
+
+	
+-constructor 
+
+
+-inheritnece
+-polymorphisam
+-abstract class
+-interface
+
+-access specifier
+	-private
+	-protected
+	-public
+
+-access modifier 
+	-static
+	-final
+	-this
+	-super
+	etc.
+
+
+
+
+
+
+
+
+
+		
+	
+	
+	
